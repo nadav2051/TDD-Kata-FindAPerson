@@ -5,7 +5,8 @@ class FindAPersonTests(unittest.TestCase):
     def setUp(self):
         postList = ["Or", 
                     "Or A.",
-                    "Misisng Cowboy"]
+                    "Misisng Cowboy",
+                    "Lassy Come Home"]
         self.crowdmap = CrowdMap(postList)
         
     def test_getAllPostsForName(self):
@@ -19,6 +20,7 @@ class FindAPersonTests(unittest.TestCase):
     def test_existingLocatinInformationReturnsTrue(self):
         locationExist = self.crowdmap.isLocationForName("Or")
         self.assertTrue(locationExist)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -4,3 +4,6 @@ class CrowdMap():
         
     def getAllPostsFor(self, name):            
         return [post for post in self.postList if name in post]
+    
+    def isLocationForName(self, name):
+        return False

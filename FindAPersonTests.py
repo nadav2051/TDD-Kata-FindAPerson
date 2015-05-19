@@ -3,15 +3,12 @@ from CrowdMap import CrowdMap
 
 class FindAPersonTests(unittest.TestCase):
     def setUp(self):
-        postList = ["Or", 
-                    "Or A.",
-                    "Misisng Cowboy",
-                    "Lassy Come Home"]
+        postList = ["I met Or A. at Chabad house Bangkok", "We found Or A. R.I.P at Langtang valley"]
         self.crowdmap = CrowdMap(postList)
         
     def test_getAllPostsForName(self):
         posts = self.crowdmap.getAllPostsFor("Or")
-        self.assertEquals( ["Or", "Or A."], posts)
+        self.assertEquals(["I met Or A. at Chabad house Bangkok", "We found Or A. R.I.P at Langtang valley"], posts)
     
     def test_getAllPostsForNonExistantName(self):
         posts = self.crowdmap.getAllPostsFor("Joe")
@@ -21,7 +18,7 @@ class FindAPersonTests(unittest.TestCase):
         locationExist = self.crowdmap.isLocationForName("Or")
         self.assertTrue(locationExist)
         
-    def test_nonExistingLocatinInformationReturnsTrue(self):
+    def test_nonExistingLocatinInformationReturnsFalse(self):
         locationExist = self.crowdmap.isLocationForName("Lassy")
         self.assertFalse(locationExist)
 

@@ -7,10 +7,10 @@ class CrowdMap():
         return [post for post in self.postList if name in post]
     
     def isLocationForName(self, name):
-        locations = LocationService().getLocations()
-        posts = self.getAllPostsFor(name)
-        for post in posts:
-            for location in locations:
+        locationList = LocationService().getLocations()
+        postList = self.getAllPostsFor(name)
+        for post in postList:
+            for location in locationList:
                 if location in post:
                     return True
         return False

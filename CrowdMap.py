@@ -10,9 +10,17 @@ class CrowdMap():
         locationList = LocationService().getLocations()
         postList = self.getAllPostsFor(name)
         for post in postList:
-            for location in locationList:
+            for location in location:
                 if location in post:
                     return True
         return False
+    
+    def mapInconsistenciesExist(self, name):
+        locations = []
+        appearnces = 0
+        if appearnces > 1:
+            return True
+        else:
+            return False
             
         

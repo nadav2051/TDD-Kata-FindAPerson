@@ -21,6 +21,14 @@ class FindAPersonTests(unittest.TestCase):
     def test_nonExistingLocatinInformationReturnsFalse(self):
         locationExist = self.crowdmap.isLocationForName("Lassy")
         self.assertFalse(locationExist)
-
+    
+    def test_mapInconsistenciesReturnsTrue(self):
+        mapIncosistent = self.crowdmap.mapInconsistenciesExist("Or")
+        self.assertTrue(mapIncosistent)
+        
+    def test_mapIncosistenciesReturnsFalse(self):
+        mapIncosistent = self.crowdmap.mapInconsistenciesExist("Lassy")
+        self.assertFalse(mapIncosistent)
+        
 if __name__ == '__main__':
     unittest.main()

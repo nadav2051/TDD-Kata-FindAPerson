@@ -25,7 +25,6 @@ class CrowdMap():
                     appearnces += 1
         if appearnces > 1:
             return True
-        else:
-            return False
+        return False
             
         
